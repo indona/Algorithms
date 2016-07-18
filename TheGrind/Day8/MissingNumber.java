@@ -12,7 +12,7 @@ public class MissingNumber
         for (int i=0; i<inputArray.length; i++)
             arrayXor = arrayXor ^ inputArray[i];
 
-        for(int i=inputArray[inputArray.length - 1]; i>0; i--)
+        for(int i=inputArray.length+1; i>0; i--)
             completeXor = completeXor ^ i;
 
         System.out.println(arrayXor ^ completeXor);
@@ -29,8 +29,8 @@ public class MissingNumber
         for(int i=0; i<T; i++)
         {
             N = scanner.nextInt();
-            inputArray = new int[N];
-            for(int j=0; j<N; j++)
+            inputArray = new int[N-1];
+            for(int j=0; j<N-1; j++)
                 inputArray[j] = scanner.nextInt();
 
             missingNumber(inputArray);
