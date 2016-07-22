@@ -1,0 +1,7 @@
+Min: -1, SecondMin: 0
+Min: -1, SecondMin: 0
+Min: 1, SecondMin: 2
+Min: 0, SecondMin: 10
+Min: -100, SecondMin: -100
+Input Invalid
+Min: 1, SecondMin: 1
