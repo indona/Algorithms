@@ -1,0 +1,69 @@
+1 pushed.
+2 pushed.
+3 pushed.
+3 popped.
+2 popped.
+1 peeked.
+
+1 pushed.
+4 pushed.
+7 pushed.
+9 pushed.
+9 popped.
+7 popped.
+4 peeked.
+
+1 pushed.
+2 pushed.
+3 pushed.
+4 pushed.
+5 pushed.
+6 pushed.
+6 popped.
+5 popped.
+4 popped.
+3 popped.
+2 popped.
+1 popped.
+Stack empty. Nothing to peek.
+
+1 pushed.
+2 pushed.
+3 pushed.
+4 pushed.
+5 pushed.
+Stack full. Cannot push.
+5 popped.
+4 peeked.
+
+1 pushed.
+2 pushed.
+3 pushed.
+4 pushed.
+5 pushed.
+5 popped.
+4 popped.
+3 popped.
+2 popped.
+1 popped.
+Stack empty. Nothing to pop.
+Stack empty. Nothing to peek.
+
+1 pushed.
+2 pushed.
+3 pushed.
+4 pushed.
+4 popped.
+3 popped.
+2 popped.
+1 popped.
+Stack empty. Nothing to pop.
+Stack empty. Nothing to peek.
+
+1 pushed.
+Stack full. Cannot push.
+1 popped.
+Stack empty. Nothing to pop.
+Stack empty. Nothing to peek.
+
+
