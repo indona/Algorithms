@@ -1,15 +1,23 @@
+//Day13 Problem: Implement a stack using Arrays.
+//Concepts: Generics, Interfaces
+//Operations: Push, Pop, isFull, isEmpty, Peek.
+//Complexity: Stack Creation=O(N) | Other operations=O(1)
+//Constraints: Capacity>0
+
 package stack;
 
-class Stack <T> implements StackInterface
+import java.util.Scanner;
+
+class Stack <T> implements StackInterface <T>
 {
-    static int stackSize;
+    static int stackCapacity;
     int tos;
     T[] stack;
 
     public Stack(int size)
     {
-        stackSize=size;
-        tos=0;
+        stackCapacity=size;
+        tos=-1;
         stack=(T[])(new Object[size]);
     }
 
@@ -19,8 +27,7 @@ class Stack <T> implements StackInterface
             System.out.println("Stack full. Cannot push.");
         else
         {
-            stack[tos]=item;
-            tos++;
+            stack[++tos]=item;
             System.out.println(item+" pushed.");
         }
     }
@@ -32,15 +39,15 @@ class Stack <T> implements StackInterface
         else
         {
             T poppedElement;
-            poppedElement = stack[tos];
-            tos--;
+            poppedElement=stack[tos];
+            stack[tos--]=null;
             System.out.println(poppedElement+" popped.");
         }
     }
 
     public boolean isFull()
     {
-        if (tos==stackSize-1)
+        if (tos==stackCapacity-1)
             return true;
         else
             return false;
@@ -48,7 +55,7 @@ class Stack <T> implements StackInterface
 
     public boolean isEmpty()
     {
-        if(tos==0)
+        if(tos<0)
             return true;
         else
             return false;
@@ -57,9 +64,9 @@ class Stack <T> implements StackInterface
     public void peek()
     {
         if(isEmpty())
-            System.out.println("Stack empty.");
+            System.out.println("Stack empty. Noting to peek");
         else
-            System.out.println(stack[tos]);
+            System.out.println(stack[tos]+" peeked.");
     }
 }
 
@@ -68,11 +75,28 @@ public class StackUsingArray
 {
     public static void main(String args[])
     {
-        Stack<Integer> stack = new Stack<Integer>(5); 
+        int T, C, N, P;
+        Stack<Integer> stack;
 
-        for(int i=1;i<=5;i++)
+        Scanner scanner = new Scanner(System.in);
+        
+        T=scanner.nextInt();
+        for(int i=0; i<T; i++)
         {
-            stack.push(i);
+            C=scanner.nextInt();
+            stack = new Stack<Integer>(C);
+
+            N=scanner.nextInt();
+            for(int j=0; j<N; j++)
+                stack.push(scanner.nextInt());
+
+            P=scanner.nextInt();
+            for(int j=0; j<P; j++)
+                stack.pop();
+
+            stack.peek();
+            System.out.print("\n");
         }
+        scanner.close();
     }
 }
