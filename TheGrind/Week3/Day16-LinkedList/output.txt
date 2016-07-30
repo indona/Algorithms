@@ -1,0 +1,54 @@
+1 added as head.
+Linked List state: 1
+
+2 added as head.
+Linked List state: 2 1
+
+3 added as head.
+Linked List state: 3 2 1
+
+4 added at the tail.
+Linked List state: 3 2 1 4
+
+Key 5 added after key 3
+Linked List state: 3 5 2 1 4
+
+Key 8 added after key 3
+Linked List state: 3 8 5 2 1 4
+
+Key 3 deleted at head.
+Linked List state: 8 5 2 1 4
+
+Key 1 at position 4 deleted.
+Linked List state: 8 5 2 4
+
+33 added as head.
+Linked List state: 33 8 5 2 4
+
+56 added at the tail.
+Linked List state: 33 8 5 2 4 56
+
+Key 17 added after key 33
+Linked List state: 33 17 8 5 2 4 56
+
+Key 22 added after key 8
+Linked List state: 33 17 8 22 5 2 4 56
+
+Previous key 19 not found. New node not inserted.
+Linked List state: 33 17 8 22 5 2 4 56
+
+Key 90 not found in the Linked List.
+Linked List state: 33 17 8 22 5 2 4 56
+
+Key 22 deleted.
+Linked List state: 33 17 8 5 2 4 56
+
+Key 17 at position 2 deleted.
+Linked List state: 33 8 5 2 4 56
+
+Key 33 at position 0 has been deleted.
+Linked List state: 8 5 2 4 56
+
+Position 17 to be deleted not found.
+Linked List state: 8 5 2 4 56
+
