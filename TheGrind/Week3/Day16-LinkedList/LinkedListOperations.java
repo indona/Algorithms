@@ -72,12 +72,22 @@ class LinkedList
 
     void addAtEnd(int data)
     {
-        Node tail=head;
-        while(tail.next!=null)
-            tail=tail.next;
+        Node newNode;
 
-        Node newNode = new Node(data);
-        tail.next=newNode;
+        if(head==null)
+        {
+            newNode = new Node(data);
+            head=newNode;
+        }
+        else
+        {
+            Node tail=head;
+            while(tail.next!=null)
+                tail=tail.next;
+
+            newNode = new Node(data);
+            tail.next=newNode;
+        }
         System.out.println(newNode.data+" added at the tail.");
         return;
     }
