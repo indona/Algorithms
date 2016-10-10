@@ -1,0 +1,23 @@
+1  1  1  0  0  0  
+0  1  0  0  0  0  
+1  1  1  0  0  0  
+0  0  2  4  4  0  
+0  0  0  2  0  0  
+0  0  1  2  4  0  
+Sum: 7
+Sum: 4
+Sum: 2
+Sum: 0
+Sum: 4
+Sum: 8
+Sum: 10
+Sum: 8
+Sum: 3
+Sum: 6
+Sum: 7
+Sum: 6
+Sum: 3
+Sum: 9
+Sum: 19
+Sum: 14
+19
