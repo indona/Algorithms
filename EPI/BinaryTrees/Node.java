@@ -1,7 +1,11 @@
 public class Node
 {
+    //Original
     int value;
     Node left, right;
+
+    //Added later
+    int height;
 
     Node(int value)
     {
