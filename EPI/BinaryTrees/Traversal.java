@@ -3,7 +3,6 @@ import java.lang.*;
 
 public class Traversal
 {
-
     public static void preOrderTraversal(Node root, List<Integer> traversal) //Root-Left-Right
     {
         if(root==null)
