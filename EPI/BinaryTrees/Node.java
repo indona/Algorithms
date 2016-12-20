@@ -7,6 +7,7 @@ public class Node
     //Added later
     int height;
     Node parent;
+    int numNodesInSubtree;
 
     //Original
     Node(int value)
@@ -23,5 +24,14 @@ public class Node
         left=null;
         right=null;
         this.parent=parent;
+    }
+
+    Node(int value, int numNodesInSubtree)
+    {
+        this.value=value;
+        left=null;
+        right=null;
+        this.parent=parent;
+        this.numNodesInSubtree=numNodesInSubtree;
     }
 }
