@@ -17,8 +17,14 @@ public class Node
         right=null;
     }
 
-    /*//Added Later
-    Node(int value, Node parent)
+    //Added Later
+    Node(int value, Node left, Node right)
+    {
+        this.value=value;
+        this.left=left;
+        this.right=right;
+    }
+    /*Node(int value, Node parent)
     {
         this.value=value;
         left=null;
