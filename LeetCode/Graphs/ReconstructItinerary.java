@@ -5,7 +5,7 @@ public class ReconstructItinerary
 {
     public static List<String> findItinerary(String[][] tickets)
     {
-        List<String> itinerary=new ArrayList<String>();
+        LinkedList<String> itinerary=new LinkedList<String>();
 
         if(tickets==null)
             return itinerary;
@@ -22,20 +22,25 @@ public class ReconstructItinerary
             flights.get(ticket[0]).add(ticket[1]);
         }
 
+        /*for(String entry : flights.keySet())
+        {
+            System.out.println("Source: "+entry+", Connected to:"+Arrays.toString(flights.get(entry).toArray()));
+        }*/
+
         //Start dfs from JFK and pick the lexicographically smaller edge in every iteration
         dfs("JFK", flights, itinerary);
         return itinerary;
     }
 
-    public static void dfs(String source, HashMap<String, PriorityQueue<String>> flights, List<String> itinerary)
+    public static void dfs(String source, HashMap<String, PriorityQueue<String>> flights, LinkedList<String> itinerary)
     {
-        itinerary.add(source);
         PriorityQueue<String> destination=flights.get(source);
         while(destination!=null && !destination.isEmpty())
         {
             String current=destination.poll();
             dfs(current, flights, itinerary);
         }
+        itinerary.addFirst(source);
     }
 
     public static void main(String args[])
@@ -48,6 +53,11 @@ public class ReconstructItinerary
         String[][] tickets2={{"JFK","SFO"}, {"JFK","ATL"}, {"SFO","ATL"}, {"ATL","JFK"}, {"ATL","SFO"}};
         itinerary.clear();
         itinerary=findItinerary(tickets2);
+        System.out.println("Itinerary: "+ Arrays.toString(itinerary.toArray()));
+
+        String[][] tickets3={{"JFK","KUL"},{"JFK","NRT"},{"NRT","JFK"}};
+        itinerary.clear();
+        itinerary=findItinerary(tickets3);
         System.out.println("Itinerary: "+ Arrays.toString(itinerary.toArray()));
     }
 }
