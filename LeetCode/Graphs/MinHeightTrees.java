@@ -41,6 +41,7 @@ public class MinHeightTrees
         }
 
         //Start the topological sort
+        /* Commenting - TLE on Leetcode OJ
         while(n>2)
         {
             n-=leaves.size();
@@ -59,10 +60,24 @@ public class MinHeightTrees
             }
             leaves.clear();
             leaves=newLeaves;
-        }
+        }*/
 
-        result.addAll(graph.keySet());
-        return result;
+        while(n>2)
+        {
+            n-=leaves.size();
+            List<Integer> newLeaves=new ArrayList<Integer>();
+            //Start with the leaves with degree=1
+            for(int leaf: leaves)
+            {
+                //For the node with degree=1, find the node which it is connected to and you have the node for which you have to reduce the degree by one by removing the leaf node from its outdegree.
+                int node=graph.get(leaf).iterator().next();
+                graph.get(node).remove(leaf);
+                if(graph.get(node).size()==1)
+                    newLeaves.add(node);
+            }
+            leaves=newLeaves;
+        }
+        return leaves;
     }
 
     public static void main(String args[])
