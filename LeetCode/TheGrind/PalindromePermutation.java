@@ -3,18 +3,21 @@ import java.util.*;
 
 public class PalindromePermutation
 {
-    public static boolean canPermutePalindrome(String s)
+    public static boolean canPermutePalindrome(String s) 
     {
-        int[] frequency=new int[256];
-        Arrays.fill(frequency, 0);
+        HashMap<Character, Integer> frequencyMap=new HashMap<Character, Integer>();
         for(int i=0;i<s.length();i++)
         {
-            frequency[s.charAt(i)-'a']++;
+            if(frequencyMap.containsKey(s.charAt(i)))
+                frequencyMap.put(s.charAt(i), frequencyMap.get(s.charAt(i))+1);
+            else
+                frequencyMap.put(s.charAt(i), 1);
         }
+
         int oddFrequency=0;
-        for(int i=0;i<frequency.length;i++)
+        for(Integer frequency: frequencyMap.values())
         {
-            if(frequency[i]%2!=0)
+            if(frequency%2!=0)
             {
                 oddFrequency++;
                 if(oddFrequency>1)
