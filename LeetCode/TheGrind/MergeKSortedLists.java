@@ -38,6 +38,7 @@ public class MergeKSortedLists
             }
         });
         */
+
         ListComparator lc=new ListComparator();
         PriorityQueue<ListNode> queue=new PriorityQueue<ListNode>(lc);
 
@@ -79,5 +80,8 @@ public class MergeKSortedLists
         ListNode[] lists={n1, n2, n3};
         ListNode result=mergeKLists(lists);
         System.out.println("Final Head: "+result.val);
+        int a=7, b=6;
+        System.out.println(a, b);
+
     }
 }
