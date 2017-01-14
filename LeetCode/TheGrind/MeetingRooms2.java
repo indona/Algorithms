@@ -16,15 +16,6 @@ class Interval
     }
 }
 
-class IntervalComparator implements Comparator<Interval>
-{
-    @Override
-    public int compare(Interval a, Interval b)
-    {
-        return a.end-b.end;
-    }
-}
-
 public class MeetingRooms2
 {
     //The idea behind this problem is to merge as many intervals as possible. First we sort the intervals by their end times. We maintain a priority queue to see if the intervals can be merged and merge as many of them as possible. Once a non-overlapping interval comes in, we add it to the heap and try to merge the remaining intervals with the new top. Repeat till all the intervals are processed.
@@ -33,10 +24,21 @@ public class MeetingRooms2
         if(intervals==null || intervals.length==0)
             return 0;
 
-        IntervalComparator ic=new IntervalComparator();
-        Arrays.sort(intervals, ic);
+        //Sort the intervals on the basis of their start times
+        Arrays.sort(intervals, new Comparator<Interval>(){
+            public int compare(Interval a, Interval b)
+            {
+                return a.start-b.start;
+            }
+        });
 
-        PriorityQueue<Interval> pq=new PriorityQueue<Interval>(ic);
+        //Add elements to the priority queue sorted based on its end time.
+        PriorityQueue<Interval> pq=new PriorityQueue<Interval>(new Comparator<Interval>(){
+            public int compare(Interval a, Interval b)
+            {
+                return a.end-b.end;
+            }
+        });
         pq.add(intervals[0]);
 
         for(int i=1;i<intervals.length;i++)
