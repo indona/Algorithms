@@ -49,6 +49,7 @@ class RegExMatching
                 }
             }
         }
+
         return dpTable[s.length()][p.length()];
     }
 

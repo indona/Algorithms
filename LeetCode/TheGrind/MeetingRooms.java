@@ -27,6 +27,7 @@ class IntervalComparator implements Comparator<Interval>
 
 public class MeetingRooms
 {
+    //The idea is to sort the intervals on their start time and see if we have any overlapping intervals. Check the overlap by comparing the current interval's start time and previous end time. If there is an overlap then the someone cannot attend the meetings.
     public static boolean canAttendMeetings(Interval[] intervals)
     {
         if(intervals==null || intervals.length==0)

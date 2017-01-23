@@ -21,17 +21,19 @@ class TrappingRainWater
 
             left[i]=max;
         }
+        System.out.println(Arrays.toString(left));
 
         //Scan from right
         max=height[height.length-1];
         for(int i=height.length-1;i>=0;i--)
         {
-            System.out.println(i);
             if(height[i]>max)
                 max=height[i];
 
             right[i]=max;
         }
+        System.out.println(Arrays.toString(right));
+
 
         //Calculate the volume (Minimum of left and right) and count the water that can be trapped i.e. Volume - height
         int water=0, volume=0;
@@ -39,8 +41,9 @@ class TrappingRainWater
         {
             volume=Math.min(left[i], right[i]);
             water+=volume-height[i];
-        }
+            System.out.println(i+" "+volume+" "+water);
 
+        }
         return water;
     }
 

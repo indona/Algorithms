@@ -3,6 +3,8 @@ import java.util.*;
 
 public class LongestCommonPrefix
 {
+    //The idea behind this problem is to start with the first word as the prefix and eliminate parts of the prefix which are not present in the rest of the words.
+    //Iterate through rest of the words and check if they start with the current prefix. If not, remove one letter from the prefix and see if this is a valid prefix. Repeat till you find the correct prefix for that word. COntinue for the rest of the words.
     public static String longestCommonPrefix(String[] strs)
     {
         if(strs==null || strs.length==0)
