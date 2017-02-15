@@ -27,6 +27,8 @@ public class AddOperators
         }
         for(int i=index;i<num.length();i++)
         {
+            //To avoid such scenarios: num=105, target=5
+            //Result= [1*0+5, 1*5, 10-5] | Expected result=[1*0+5, 10-5] 
             if(i!=index && num.charAt(index)=='0')
                 break;
 
@@ -46,8 +48,8 @@ public class AddOperators
     public static void main(String args[])
     {
         List<String> result=new ArrayList<String>();
-        result=addOperators("11201", 2);
-        System.out.println(Arrays.toString(result.toArray()));
+        // result=addOperators("11201", 2);
+        // System.out.println(Arrays.toString(result.toArray()));
 
         result.clear();
         result=addOperators("105", 5);
