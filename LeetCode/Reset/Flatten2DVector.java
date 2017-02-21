@@ -16,28 +16,24 @@ class Vector2D implements Iterator<Integer>
     @Override
     public Integer next()
     {
+        hasNext();
         return vector2D.get(row).get(column++);
     }
 
     @Override
     public boolean hasNext()
     {
-        if(row<vector2D.size())
+        while(row<vector2D.size())
         {
-            if(column<vector2D.get(row).size())
+            if(col<vector2D.get(row).size())
                 return true;
             else
-                while(row<vector2D.size())
-                {
-                    row++;
-                    column=0;
-                    if(row<vector2D.size() && column<vector2D.get(row).size())
-                        return true;
-                }
-                return false;
+            {
+                row++;
+                col=0;
+            }
         }
-        else
-            return false;
+        return false;
     }
   }
 
