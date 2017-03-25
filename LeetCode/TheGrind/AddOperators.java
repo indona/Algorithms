@@ -28,7 +28,7 @@ public class AddOperators
         for(int i=index;i<num.length();i++)
         {
             //To avoid such scenarios: num=105, target=5
-            //Result= [1*0+5, 1*5, 10-5] | Expected result=[1*0+5, 10-5] 
+            //Result= [1*0+5, 1*5, 10-5] | Actual result=[1*0+5, 10-5] 
             if(i!=index && num.charAt(index)=='0')
                 break;
 
